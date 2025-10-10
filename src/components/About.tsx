@@ -89,9 +89,9 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7 + idx * 0.1, duration: 0.5 }}
-                className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_rgba(247,147,30,0.2)]"
+                className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-white/50 transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">

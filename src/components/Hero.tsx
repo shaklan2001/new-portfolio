@@ -109,7 +109,7 @@ export default function Hero() {
                   <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               ),
-              text: "App Store Ready"
+              text: "App Store & Play Store Ready"
             }
           ].map((card, idx) => (
             <motion.div
@@ -117,7 +117,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9 + idx * 0.1, duration: 0.5 }}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 shadow-lg"
+              className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 shadow-lg"
             >
               <div>
                 {card.icon}
