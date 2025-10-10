@@ -8,13 +8,6 @@ import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { ShootingStars } from "./ui/shooting-stars";
 
-const techStack = [
-  { name: "React Native", color: "#61DAFB" },
-  { name: "Next.js", color: "#FFFFFF" },
-  { name: "GSAP", color: "#88CE02" },
-  { name: "AWS", color: "#FF9900" },
-  { name: "TailwindCSS", color: "#06B6D4" },
-];
 
 export default function Hero() {
   return (
@@ -65,7 +58,7 @@ export default function Hero() {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <TextGenerateEffect
-              words="Your ideas, my code - rapid, reliable, ready"
+              words="Building bold mobile apps that move like magic"
               className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#F7931E]"
             />
           </h1>
@@ -77,7 +70,7 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto"
         >
-          Building high-performance apps with clean code, motion and speed.
+          I blend code and creativity to craft fast, flawless mobile experiences.
         </motion.p>
 
          <motion.div
@@ -162,13 +155,22 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2"
+          className="w-6 h-10 border-2 border-white/50 rounded-full flex items-center justify-center"
         >
-          <motion.div
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-primary rounded-full"
-          />
+          <svg
+            className="w-3 h-3 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={3}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
         </motion.div>
       </motion.div>
     </section>

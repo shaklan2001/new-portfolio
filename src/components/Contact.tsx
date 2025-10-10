@@ -1,59 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Smartphone } from "lucide-react";
-import { useState } from "react";
+import { Mail, Github, Linkedin } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const socialLinks = [
   {
     icon: Github,
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/nishantshaklan",
     color: "#ffffff",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com",
-    color: "#0077b5",
+    href: "https://linkedin.com/in/nishantshaklan",
+    color: "#ffffff",
   },
   {
-    icon: Smartphone,
-    label: "Play Store",
-    href: "https://play.google.com",
-    color: "#34a853",
+    icon: XIcon,
+    label: "X",
+    href: "https://x.com/nishantshaklan",
+    color: "#ffffff",
   },
   {
-    icon: Smartphone,
-    label: "App Store",
-    href: "https://apps.apple.com",
-    color: "#007aff",
+    icon: Mail,
+    label: "Email",
+    href: "mailto:nishant.ns171@gmail.com",
+    color: "#ffffff",
   },
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    const mailtoLink = `mailto:nishant.ns171@gmail.com?subject=Contact from ${formData.name}&body=${formData.message}`;
-    window.location.href = mailtoLink;
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
     <section id="contact" className="py-20 px-4 md:px-8 lg:px-16 relative">
       <div className="max-w-4xl mx-auto">
@@ -65,133 +54,59 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's Build Together
+            Let's Connect
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a project in mind? Let's turn your ideas into reality.
+            Ready to collaborate? Let's build something amazing together.
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 mb-12"
-          style={{
-            boxShadow: "0 0 40px rgba(247, 147, 30, 0.1)",
-          }}
-        >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium mb-2 text-foreground"
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl">
+            {socialLinks.map((link, idx) => (
+              <motion.div
+                key={link.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
               >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium mb-2 text-foreground"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2 text-foreground"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                placeholder="Tell me about your project..."
-              />
-            </div>
-
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-[#1A110A] via-[#A35709] to-[#F7931E] text-white font-medium py-3 rounded-lg hover:shadow-[0_0_30px_rgba(247,147,30,0.4)] transition-all duration-300"
-            >
-              Send Message
-            </motion.button>
-          </form>
-
-          <div className="mt-8 pt-8 border-t border-border/50">
-            <div className="flex items-center justify-center gap-2 text-muted-foreground mb-6">
-              <Mail className="w-5 h-5" />
-              <a
-                href="mailto:nishant.ns171@gmail.com"
-                className="hover:text-primary transition-colors"
-              >
-                nishant.ns171@gmail.com
-              </a>
-            </div>
-
-            <div className="flex justify-center gap-4">
-              {socialLinks.map((link, idx) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + idx * 0.1, duration: 0.3 }}
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: `0 0 20px ${link.color}40`,
-                  }}
-                  className="p-3 bg-secondary/50 border border-border rounded-lg hover:border-primary/50 transition-all"
-                  aria-label={link.label}
+                <CardSpotlight
+                  radius={200}
+                  color="rgba(255, 255, 255, 0.1)"
+                  className="group"
                 >
-                  <link.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
+                  <motion.a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex flex-col items-center justify-center p-8 h-32 bg-card/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-white/50"
+                    aria-label={link.label}
+                  >
+                    <div className="p-3 bg-secondary/50 rounded-xl mb-3 group-hover:bg-white/10 transition-colors">
+                      <link.icon 
+                        className="w-6 h-6 text-muted-foreground group-hover:text-white transition-colors" 
+                        style={{ color: link.color }}
+                      />
+                    </div>
+                    <span className="text-sm font-medium text-foreground group-hover:text-white transition-colors">
+                      {link.label}
+                    </span>
+                  </motion.a>
+                </CardSpotlight>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-center text-muted-foreground text-lg"
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center text-muted-foreground text-lg mt-12"
         >
           Let's build something impactful together.
         </motion.p>
