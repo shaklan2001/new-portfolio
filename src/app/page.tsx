@@ -22,11 +22,11 @@ export default function Home() {
       
       <MobileNav />
       
-      <footer className="relative py-8 px-4 text-center border-t border-border/50">
+      {/* <footer className="relative py-8 px-4 text-center border-t border-border/50">
         <p className="text-muted-foreground text-sm">
           © {new Date().getFullYear()} Nishant Shaklan. Crafted with precision and passion.
         </p>
-      </footer>
+      </footer> */}
     </main>
   );
 }
