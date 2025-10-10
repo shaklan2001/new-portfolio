@@ -1,0 +1,20 @@
+# Development files
+.vscode/
+.idea/
+*.log
+
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Visual edits (development only)
+src/visual-edits/
