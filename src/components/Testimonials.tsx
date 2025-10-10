@@ -1,69 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CardStack } from "./ui/card-stack";
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    id: 1,
-    content: (
-      <div className="space-y-4">
-        <div className="flex gap-1 mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-          ))}
-        </div>
-        <p className="text-foreground leading-relaxed">
-          "Nishant delivered our React Native app ahead of schedule with exceptional quality. 
-          His attention to detail and smooth animations made our product stand out."
-        </p>
-        <div className="pt-4 border-t border-border/50">
-          <p className="font-semibold text-foreground">Sarah Chen</p>
-          <p className="text-sm text-muted-foreground">Founder, TechStart</p>
-        </div>
-      </div>
-    ),
+    quote:
+      "Nishant delivered our React Native app ahead of schedule with exceptional quality. His attention to detail and smooth animations made our product stand out.",
+    name: "Sarah Chen",
+    title: "Founder, TechStart",
   },
   {
-    id: 2,
-    content: (
-      <div className="space-y-4">
-        <div className="flex gap-1 mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-          ))}
-        </div>
-        <p className="text-foreground leading-relaxed">
-          "Working with Nishant was a game-changer. He understood our vision and built a 
-          beautiful, performant Next.js platform that exceeded expectations."
-        </p>
-        <div className="pt-4 border-t border-border/50">
-          <p className="font-semibold text-foreground">Michael Rodriguez</p>
-          <p className="text-sm text-muted-foreground">CTO, BuildFast</p>
-        </div>
-      </div>
-    ),
+    quote:
+      "Working with Nishant was a game-changer. He understood our vision and built a beautiful, performant Next.js platform that exceeded expectations.",
+    name: "Michael Rodriguez",
+    title: "CTO, BuildFast",
   },
   {
-    id: 3,
-    content: (
-      <div className="space-y-4">
-        <div className="flex gap-1 mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-          ))}
-        </div>
-        <p className="text-foreground leading-relaxed">
-          "Incredible work! Nishant transformed our rough idea into a polished MVP in weeks. 
-          His code quality and communication are top-notch."
-        </p>
-        <div className="pt-4 border-t border-border/50">
-          <p className="font-semibold text-foreground">Emily Watson</p>
-          <p className="text-sm text-muted-foreground">Product Lead, InnovateCo</p>
-        </div>
-      </div>
-    ),
+    quote:
+      "Incredible work! Nishant transformed our rough idea into a polished MVP in weeks. His code quality and communication are top-notch.",
+    name: "Emily Watson",
+    title: "Product Lead, InnovateCo",
+  },
+  {
+    quote:
+      "Nishant's expertise in React Native and Next.js is unmatched. He delivered a flawless mobile app that our users absolutely love.",
+    name: "David Kim",
+    title: "CEO, MobileFirst",
+  },
+  {
+    quote:
+      "Professional, reliable, and incredibly talented. Nishant brought our vision to life with clean code and beautiful UI/UX design.",
+    name: "Lisa Thompson",
+    title: "Design Director, CreativeCo",
   },
 ];
 
@@ -76,7 +46,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Client Testimonials
@@ -87,24 +57,19 @@ export default function Testimonials() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex justify-center"
+          className="h-[30rem] rounded-md flex flex-col antialiased bg-background items-center justify-center relative overflow-hidden"
         >
-          <CardStack items={testimonials} offset={15} scaleFactor={0.06} />
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="right"
+            speed="slow"
+            className="[mask-image:linear-gradient(to_right,transparent,white,white,transparent)]"
+          />
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-center text-muted-foreground mt-8"
-        >
-          Click the cards to cycle through testimonials
-        </motion.p>
       </div>
     </section>
   );

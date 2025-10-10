@@ -1,38 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Smartphone } from "lucide-react";
+import { ExternalLink, Smartphone, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { LampContainer } from "./ui/lamp";
 
 const projects = [
   {
     title: "Betterway Paramedic Service App",
-    description: "Emergency response mobile application connecting paramedics with real-time dispatch and patient management systems.",
+    description:
+      "Emergency response mobile application connecting paramedics with real-time dispatch and patient management systems.",
     tech: ["React Native", "Firebase", "Google Maps API", "Push Notifications"],
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
     playStore: "#",
     appStore: "#",
   },
   {
     title: "Betterway User App",
-    description: "User-facing companion app with dynamic onboarding, emergency calling, and live tracking features.",
+    description:
+      "User-facing companion app with dynamic onboarding, emergency calling, and live tracking features.",
     tech: ["React Native", "Expo", "Real-time Database", "Geolocation"],
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
     playStore: "#",
     appStore: "#",
   },
   {
     title: "UA Sneakers Hub",
-    description: "Modern e-commerce platform for sneaker enthusiasts with advanced filtering, cart management, and checkout.",
+    description:
+      "Modern e-commerce platform for sneaker enthusiasts with advanced filtering, cart management, and checkout.",
     tech: ["Next.js", "Stripe", "Supabase", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
     link: "#",
   },
   {
     title: "Redfine Gaming Live",
-    description: "Interactive gaming showcase with GSAP-driven animations, smooth scrolling, and immersive user experience.",
+    description:
+      "Interactive gaming showcase with GSAP-driven animations, smooth scrolling, and immersive user experience.",
     tech: ["Next.js", "GSAP", "Framer Motion", "Three.js"],
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
     link: "#",
   },
 ];
@@ -41,20 +50,20 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 px-4 md:px-8 lg:px-16 relative">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <LampContainer>
+          <motion.h1
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+          >
             Featured Projects
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Showcasing impactful work across mobile and web platforms
-          </p>
-        </motion.div>
+          </motion.h1>
+        </LampContainer>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
@@ -64,13 +73,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              whileHover={{
-                scale: 1.03,
-                rotateY: 6,
-                rotateX: -6,
-              }}
-              className="group bg-card/50 backdrop-blur-sm border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-350"
-              style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
+              className="group bg-card/50 backdrop-blur-sm border border-border rounded-2xl overflow-hidden transition-all duration-350"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
@@ -83,7 +86,7 @@ export default function Projects() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-3">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -94,7 +97,7 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs bg-primary/10 border border-primary/20 rounded-full text-primary"
+                      className="px-3 py-1 text-xs bg-secondary/50 border border-border rounded-full text-muted-foreground"
                     >
                       {tech}
                     </span>
@@ -103,30 +106,30 @@ export default function Projects() {
 
                 <div className="flex gap-4">
                   {project.playStore && (
-                    <a
-                      href={project.playStore}
-                      className="flex items-center gap-2 px-4 py-2 bg-secondary/50 hover:bg-secondary rounded-lg transition-colors group/link"
-                    >
-                      <Smartphone className="w-4 h-4" />
-                      <span className="text-sm">Play Store</span>
+                    <a href={project.playStore} className="group/link">
+                      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-6 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2 focus:ring-offset-background">
+                        <Smartphone className="w-4 h-4 mr-2" />
+                        Play Store
+                        <ArrowUpRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                      </button>
                     </a>
                   )}
                   {project.appStore && (
-                    <a
-                      href={project.appStore}
-                      className="flex items-center gap-2 px-4 py-2 bg-secondary/50 hover:bg-secondary rounded-lg transition-colors group/link"
-                    >
-                      <Smartphone className="w-4 h-4" />
-                      <span className="text-sm">App Store</span>
+                    <a href={project.appStore} className="group/link">
+                      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-6 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2 focus:ring-offset-background">
+                        <Smartphone className="w-4 h-4 mr-2" />
+                        App Store
+                        <ArrowUpRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                      </button>
                     </a>
                   )}
                   {project.link && (
-                    <a
-                      href={project.link}
-                      className="flex items-center gap-2 px-4 py-2 bg-secondary/50 hover:bg-secondary rounded-lg transition-colors group/link"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm">View Live</span>
+                    <a href={project.link} className="group/link">
+                      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-6 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2 focus:ring-offset-background">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Live
+                        <ArrowUpRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                      </button>
                     </a>
                   )}
                 </div>

@@ -2,33 +2,34 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Code2, Smartphone, Server, Database, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
     icon: Code2,
     title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
+    skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "GSAP"],
   },
   {
     icon: Smartphone,
     title: "Mobile",
-    skills: ["React Native", "Expo", "iOS", "Android", "Cross-Platform"],
+    skills: ["React Native", "Expo", "Skia", "Reanimated", "Nativewind", "Shopify Restyle"],
   },
   {
     icon: Server,
     title: "Backend",
-    skills: ["Node.js", "Express", "REST APIs", "GraphQL", "Serverless"],
+    skills: ["Node.js", "Express", "REST APIs", "Serverless", "Javascript"],
   },
   {
     icon: Database,
     title: "Database",
-    skills: ["PostgreSQL", "MongoDB", "Firebase", "Supabase", "Redis"],
+    skills: ["PostgreSQL", "MongoDB", "Supabase", "Redis"],
   },
   {
     icon: Wrench,
     title: "Tools",
-    skills: ["Git", "AWS", "Docker", "GSAP", "Figma"],
+    skills: ["GitHub", "AWS", "Docker", "Cursor", "Figma"],
   },
 ];
 
@@ -83,29 +84,30 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              whileHover={{ 
-                scale: 1.03,
-                boxShadow: "0 0 30px rgba(247, 147, 30, 0.2)"
-              }}
-              className="skill-card bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 group"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
-                  <category.icon className="w-6 h-6 text-primary" />
+              <CardSpotlight
+                radius={300}
+                color="rgba(6, 182, 212, 0.1)"
+                className="skill-card bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 transition-all duration-300 group"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-secondary/50 rounded-xl">
+                    <category.icon className="w-6 h-6 text-muted-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold">{category.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold">{category.title}</h3>
-              </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-sm bg-secondary/50 rounded-full border border-border/50 hover:border-primary/50 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 text-sm bg-secondary/50 rounded-full border border-border/50 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </CardSpotlight>
             </motion.div>
           ))}
         </div>
