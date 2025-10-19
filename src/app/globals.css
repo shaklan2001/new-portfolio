@@ -116,22 +116,19 @@
     scroll-behavior: smooth;
   }
   
-  /* Custom scrollbar */
+  /* Hide scrollbar completely */
   ::-webkit-scrollbar {
-    width: 8px;
+    display: none;
   }
   
-  ::-webkit-scrollbar-track {
-    background: var(--background);
+  /* For Firefox */
+  html {
+    scrollbar-width: none;
   }
   
-  ::-webkit-scrollbar-thumb {
-    background: rgba(163, 87, 9, 0.5);
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(247, 147, 30, 0.7);
+  /* For IE and Edge */
+  body {
+    -ms-overflow-style: none;
   }
 }
 

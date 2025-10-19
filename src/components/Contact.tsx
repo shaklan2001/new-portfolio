@@ -19,19 +19,19 @@ const socialLinks = [
   {
     icon: Github,
     label: "GitHub",
-    href: "https://github.com/nishantshaklan",
+    href: "https://github.com/shaklan2001",
     color: "#ffffff",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/nishantshaklan",
+    href: "https://www.linkedin.com/in/nishant-shaklan-b68a151a6/",
     color: "#ffffff",
   },
   {
     icon: XIcon,
     label: "X",
-    href: "https://x.com/nishantshaklan",
+    href: "https://x.com/NShaklan",
     color: "#ffffff",
   },
   {

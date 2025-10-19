@@ -49,10 +49,10 @@ export default function Testimonials() {
           className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Client Testimonials
+            Testimonials
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            What clients say about working with me
+            What people say about my work and working with me 
           </p>
         </motion.div>
 

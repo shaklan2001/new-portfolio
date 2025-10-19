@@ -19,7 +19,6 @@ export default function Home() {
       <About />
       <Testimonials />
       <Contact />
-      
       <MobileNav />
       
       {/* <footer className="relative py-8 px-4 text-center border-t border-border/50">

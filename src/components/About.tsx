@@ -19,7 +19,7 @@ export default function About() {
           </h2>
 
           <div className="flex flex-col items-center gap-8 mb-12">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -36,7 +36,7 @@ export default function About() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -46,17 +46,17 @@ export default function About() {
               className="max-w-3xl"
             >
               <h3 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-white via-white to-primary bg-clip-text text-transparent">
-                Freelance Full Stack & React Native Developer
+                Full Stack Mobile & Web Developer
               </h3>
               
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  With <span className="text-primary font-semibold">1+ year of professional experience</span>, 
-                  I specialize in transforming ideas into polished, production-ready applications.
+                  With <span className="text-primary font-semibold">1+ year of industry experience</span>, 
+                  I specialize in transforming ideas into polished, production-ready applications and scale them.
                 </p>
                 
                 <p>
-                  My focus is on delivering <span className="text-foreground font-medium">fast, scalable MVPs</span> that 
+                  My focus is on delivering <span className="text-foreground font-medium">fast, scalable production-ready applications</span> that 
                   combine elegant design with robust functionality. From mobile-first experiences to complex web platforms, 
                   I bring precision and craftsmanship to every project.
                 </p>
@@ -78,9 +78,9 @@ export default function About() {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             {[
-              { label: "Projects Delivered", value: "15+" },
+              { label: "Collaborations Projects", value: "6+" },
               { label: "Years Experience", value: "1+" },
-              { label: "Client Satisfaction", value: "100%" },
+              { label: "Independent Projects", value: "3+" },
               { label: "Technologies", value: "20+" },
             ].map((stat, idx) => (
               <motion.div

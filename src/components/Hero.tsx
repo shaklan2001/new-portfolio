@@ -7,9 +7,12 @@ import { motion } from "framer-motion";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { ShootingStars } from "./ui/shooting-stars";
+import { useState } from "react";
 
 
 export default function Hero() {
+  const [isAvailable] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       <BackgroundRipple />
@@ -49,7 +52,35 @@ export default function Hero() {
       </motion.div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center mt-16">
+      <div className="relative z-10 max-w-5xl mx-auto text-center mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center items-center mb-8"
+        >
+          <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10">
+            <motion.div
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className={`w-2.5 h-2.5 rounded-full ${
+                isAvailable 
+                  ? 'bg-green-400 shadow-[0_0_10px_rgba(34,197,94,0.5)]' 
+                  : 'bg-red-400 shadow-[0_0_10px_rgba(239,68,68,0.5)]'
+              }`}
+            />
+            <span className="text-white font-medium text-xs">
+              {isAvailable ? "Available for New Projects" : "Currently Working on a Project"}
+            </span>
+          </div>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +101,7 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto"
         >
-          I blend code and creativity to craft fast, flawless mobile experiences.
+          I blend code and creativity to craft fast, flawless mobile and web experiences.
         </motion.p>
 
          <motion.div
