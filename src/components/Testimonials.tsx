@@ -7,13 +7,13 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Nishant delivered our React Native app ahead of schedule with exceptional quality. His attention to detail and smooth animations made our product stand out.",
+      "The understand of Pixel Prefect UI and the ablity to solve problem is best i have seen. Working with nishnat feel that every problem is solved with ease.",
     name: "Victor Chodary",
     title: "CTO, betterway",
   },
   {
     quote:
-      "Working with Nishant was a game-changer. He understood our vision and built a beautiful, performant Next.js platform that exceeded expectations.",
+      "Nishant is a great developer and he is always willing to help. He is a great team player and he is always willing to help. He is a great team player and he is always willing to help.",
     name: "Shubham Chaudhary",
     title: "Founder, MuscleScript",
   },
