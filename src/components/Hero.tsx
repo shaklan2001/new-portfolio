@@ -77,7 +77,7 @@ export default function Hero() {
               }`}
             />
             <span className="text-white font-medium text-xs">
-              {isAvailable ? "Available for New Projects" : "Currently Working on a Project"}
+              {isAvailable ? "Available for New Projects" : "Currently Working on a Projects"}
             </span>
           </div>
         </motion.div>
