@@ -31,7 +31,7 @@ const projects = [
     tech: ["React Native", "Expo", "Unistyle", "OpenApi", "OAuth", "RevenueCat", 'Ai'],
     image: "/assets/projects/Feature Graphic.png",
     playStore: "https://play.google.com/store/apps/details?id=com.shubhamdeol.MuscleScript&pcampaignid=web_sharet",
-    appStore: "https://apps.apple.com/us/app/muscle-script/id6749661467",
+    appStore: "https://apps.apple.com/in/app/musclescript-fitness-app/id6753226583MuscleScript: Fitness App",
   },
   {
     title: "Redfine Gaming Live",
