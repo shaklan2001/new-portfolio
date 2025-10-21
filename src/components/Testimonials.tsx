@@ -8,33 +8,21 @@ const testimonials = [
   {
     quote:
       "Nishant delivered our React Native app ahead of schedule with exceptional quality. His attention to detail and smooth animations made our product stand out.",
-    name: "Sarah Chen",
-    title: "Founder, TechStart",
+    name: "Victor Chodary",
+    title: "CTO, betterway",
   },
   {
     quote:
       "Working with Nishant was a game-changer. He understood our vision and built a beautiful, performant Next.js platform that exceeded expectations.",
-    name: "Michael Rodriguez",
-    title: "CTO, BuildFast",
+    name: "Shubham Chaudhary",
+    title: "Founder, MuscleScript",
   },
   {
     quote:
-      "Incredible work! Nishant transformed our rough idea into a polished MVP in weeks. His code quality and communication are top-notch.",
-    name: "Emily Watson",
-    title: "Product Lead, InnovateCo",
-  },
-  {
-    quote:
-      "Nishant's expertise in React Native and Next.js is unmatched. He delivered a flawless mobile app that our users absolutely love.",
-    name: "David Kim",
-    title: "CEO, MobileFirst",
-  },
-  {
-    quote:
-      "Professional, reliable, and incredibly talented. Nishant brought our vision to life with clean code and beautiful UI/UX design.",
-    name: "Lisa Thompson",
-    title: "Design Director, CreativeCo",
-  },
+      "Nishant is a great developer and he is always willing to help. He is a great team player and he is always willing to help. He is a great team player and he is always willing to help.",
+    name: "Zyan Mehra",
+    title: "CEO, TagCash",
+  }
 ];
 
 export default function Testimonials() {

@@ -9,40 +9,37 @@ const projects = [
   {
     title: "Betterway Paramedic Service App",
     description:
-      "Emergency response mobile application connecting paramedics with real-time dispatch and patient management systems.",
-    tech: ["React Native", "Firebase", "Google Maps API", "Push Notifications"],
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-    playStore: "#",
-    appStore: "#",
+      "This app is designed to support Betterway paramedics in managing their daily operations — including appointment schedules, procedure sessions, order management, ticket creation, and booking follow-ups.With features like quick patient check-in, job handover, and real-time escalation handling, the app helps ensure smooth, effective service delivery. It also displays daily performance metrics to help paramedics stay aligned, improve care quality, and serve patients more efficiently",
+    tech: ["React Native", "Node.js", "Postgress", "Push Notifications", "Typescript", "Expo", "Shopify Restyle", "Reanimated-2"],
+    image: "/assets/projects/service_app.png",
+    playStore: "https://play.google.com/store/apps/details?id=com.betterway.service&pcampaignid=web_share",
+    appStore: "https://apps.apple.com/in/app/betterway-service/id6747738257BetterWayService",
   },
   {
     title: "Betterway User App",
     description:
-      "User-facing companion app with dynamic onboarding, emergency calling, and live tracking features.",
-    tech: ["React Native", "Expo", "Real-time Database", "Geolocation"],
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-    playStore: "#",
-    appStore: "#",
+      "This app is designed to support BetterWay Ayurvedic doctors and patients in managing their health journey — including appointment booking, Nadi Parikshan report access, document management, Ayurvedic information, and doctor insights. With features like easy scheduling, report tracking, and knowledge access, the app helps ensure smooth, effective care delivery. It also empowers users to stay informed, improve health outcomes, and experience the transformative power of Ayurved.",
+    tech: ["React Native", "Expo", "Shopify Restyle", "Reanimated-3", "Skia", "Gravity", "Node.js", "Postgress", "Push Notifications", "Typescript"],
+    image: "/assets/projects/betterway_app.png",
+    playStore: "https://play.google.com/store/apps/details?id=com.betterway.user.app&pcampaignid=web_share",
+    appStore: "https://apps.apple.com/in/app/betterway/id6502288128BetterWay",
   },
   {
-    title: "UA Sneakers Hub",
+    title: "MuscleScript",
     description:
-      "Modern e-commerce platform for sneaker enthusiasts with advanced filtering, cart management, and checkout.",
-    tech: ["Next.js", "Stripe", "Supabase", "TailwindCSS"],
-    image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-    link: "#",
+      "This app is designed to support Muscle Script users in managing their personalized fitness journey — including AI-powered workout planning, exercise tracking, and goal-based training adaptations. With features like intelligent routine generation, automatic set and rep tracking, and real-time workout guidance, the app ensures smooth, effective fitness progress. It empowers users to take full control of their training, stay consistent, and achieve their goals — all with the AI coach of their choice.",
+    tech: ["React Native", "Expo", "Unistyle", "OpenApi", "OAuth", "RevenueCat", 'Ai'],
+    image: "/assets/projects/Feature Graphic.png",
+    playStore: "https://play.google.com/store/apps/details?id=com.shubhamdeol.MuscleScript&pcampaignid=web_sharet",
+    appStore: "https://apps.apple.com/us/app/muscle-script/id6749661467",
   },
   {
     title: "Redfine Gaming Live",
     description:
       "Interactive gaming showcase with GSAP-driven animations, smooth scrolling, and immersive user experience.",
-    tech: ["Next.js", "GSAP", "Framer Motion", "Three.js"],
-    image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
-    link: "#",
+    tech: ["React", "GSAP"],
+    image: "/assets/projects/gaminggg.png",
+    link: "https://redfine-gaming.netlify.app/",
   },
 ];
 
@@ -65,7 +62,7 @@ export default function Projects() {
           </motion.h1>
         </LampContainer>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {projects.map((project, idx) => (
             <motion.div
               key={project.title}
@@ -75,25 +72,25 @@ export default function Projects() {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               className="group bg-card/50 backdrop-blur-sm border border-border rounded-2xl overflow-hidden transition-all duration-350"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-100 md:h-96 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-muted-foreground mb-3 leading-relaxed text-sm">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
@@ -106,8 +103,8 @@ export default function Projects() {
 
                 <div className="flex gap-4">
                   {project.playStore && (
-                    <a href={project.playStore} className="group/link">
-                      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-6 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2 focus:ring-offset-background">
+                    <a href={project.playStore} target="_blank" className="group/link">
+                      <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-4 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none text-sm">
                         <Smartphone className="w-4 h-4 mr-2" />
                         Play Store
                         <ArrowUpRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
@@ -115,8 +112,8 @@ export default function Projects() {
                     </a>
                   )}
                   {project.appStore && (
-                    <a href={project.appStore} className="group/link">
-                      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-6 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2 focus:ring-offset-background">
+                    <a href={project.appStore} target="_blank" className="group/link">
+                      <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-4 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none text-sm">
                         <Smartphone className="w-4 h-4 mr-2" />
                         App Store
                         <ArrowUpRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
@@ -124,8 +121,8 @@ export default function Projects() {
                     </a>
                   )}
                   {project.link && (
-                    <a href={project.link} className="group/link">
-                      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-6 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2 focus:ring-offset-background">
+                    <a href={project.link} target="_blank" className="group/link">
+                      <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,#050507,45%,#1a1a1d,55%,#050507)] bg-[length:200%_100%] px-4 font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none text-sm">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         View Live
                         <ArrowUpRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
