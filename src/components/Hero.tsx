@@ -170,7 +170,7 @@ export default function Hero() {
           <MovingBorderButton
             className="bg-background text-foreground hover:bg-background/80"
             data-cal-namespace="15min"
-            data-cal-link="nishant-shaklan"
+            data-cal-link="nishant-shaklan/15min"
             data-cal-config='{"layout":"month_view"}'
           >
             Hire Me
