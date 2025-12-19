@@ -161,7 +161,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -171,7 +170,7 @@ export default function Hero() {
           <MovingBorderButton
             className="bg-background text-foreground hover:bg-background/80"
             data-cal-namespace="15min"
-            data-cal-link="nishant-shaklan-pewc0q/15min"
+            data-cal-link="nishant-shaklan"
             data-cal-config='{"layout":"month_view"}'
           >
             Hire Me
