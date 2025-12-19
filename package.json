@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/parser": "^7.28.4",
+    "@calcom/embed-react": "^1.5.3",
     "@gsap/react": "^2.1.2",
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
