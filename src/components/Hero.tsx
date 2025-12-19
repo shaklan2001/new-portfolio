@@ -7,11 +7,19 @@ import { motion } from "framer-motion";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { ShootingStars } from "./ui/shooting-stars";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 
 export default function Hero() {
-  const [isAvailable] = useState(false);
+  const [isAvailable] = useState(true);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"15min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
@@ -162,7 +170,9 @@ export default function Hero() {
         >
           <MovingBorderButton
             className="bg-background text-foreground hover:bg-background/80"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            data-cal-namespace="15min"
+            data-cal-link="nishant-shaklan-pewc0q/15min"
+            data-cal-config='{"layout":"month_view"}'
           >
             Hire Me
           </MovingBorderButton>
